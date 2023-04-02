@@ -23,7 +23,6 @@ function Pwid() {
                     <p className="mt-6">비밀번호</p>
                     <input type="password"
                         className="rounded-md mx-auto mt-1 border-2 border-slate-600 w-80 h-12 outline-none"
-                        // type={passwordType.type}
                         onChange={(e) => {
                             setRegisterPassword(e.target.value);
                         }}
