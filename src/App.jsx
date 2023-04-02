@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <div className='h-screen min-h-full pb-48'>
+      <div className='h-screen min-h-full'>
         <Header />
         <Routes>
           <Route path="/*" element={<Main/>} />

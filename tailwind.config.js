@@ -2,8 +2,16 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        'mainheight' : '45rem',
+        'main' : 'calc(100% - 17rem)'
+      },
+      width: {
+        'mainwd' : '38rem'
+      }
+    },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 }
 

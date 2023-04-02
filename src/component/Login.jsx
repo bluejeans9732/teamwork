@@ -1,18 +1,17 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import './practice.css';
 
 
 function Login() {
     return (
-        <div className="h-full w-full relative">
-            <div className="bg-gray-50 mx-auto mt-20 rounded-2xl border-2 border-slate-600 practice">
+        <div className="h-main w-full relative overflow-y-scroll scrollbar-hide">
+            <div className="bg-gray-50 mx-auto mt-20 rounded-2xl border-2 border-slate-600 h-mainheight w-mainwd">
                 <div className="flex flex-col">
                     <h1 className="mx-auto mt-10 text-5xl">Oh! MyCar</h1>
-                    <input type="email" Placeholder="이메일 주소" 
+                    <input type="email" placeholder="이메일 주소" 
                         className="rounded-md mx-auto mt-10 border-2 border-slate-600 w-80 h-12 outline-none"
                     />
-                    <input type="text" Placeholder="비밀번호" 
+                    <input type="text" placeholder="비밀번호" 
                         className="rounded-md mx-auto mt-5 border-2 border-slate-600 w-80 h-12 outline-none"
                     />
                     <button className="Login_login rounded-md mx-auto mt-5 w-80 h-12 bg-cyan-300 text-white">로그인</button>
