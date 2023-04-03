@@ -16,7 +16,7 @@ function Pwid() {
         <div className="h-full w-full relative overflow-y-scroll scrollbar-hide flex">
             <div className="flex w-3/6"><img src="./image/carfix.jpg"/></div>
             <div className="pt-20 pl-20 mx-auto w-3/6 bg-gray-50">
-                <div className="mx-auto"><h1 className="text-5xl">Oh! MyCar</h1></div>
+                <Link to="/" className="mx-auto"><h1 className="text-5xl">Oh! MyCar</h1></Link>
                 <div className="flex flex-col mt-40 mx-auto w-1/2">
                     <h1 className="text-4xl">회원가입</h1>
                     <p className="mt-3 text-xs font-light">가입 양식에 맞게 작성해주세요.</p>

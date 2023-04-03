@@ -24,7 +24,7 @@ function Login() {
                     <div>
                         <p className="mt-1 text-xs float-right font-light">비밀번호를 잊어버렸나요?</p>
                     </div>
-                    <button className="Login_login rounded-md  mt-10 w-full h-12 bg-cyan-300 text-white">로그인</button>
+                    <button className="Login_login rounded-md  mt-10 w-full h-12 bg-cyan-300 text-white text-bold">로그인</button>
                     {/* <Link to='/pwid' className="rounded-md  mt-5 w-80 h-12 bg-cyan-300 text-white text-center">
                         <button className="translate-y-2.5">회원가입</button>
                     </Link> */}
