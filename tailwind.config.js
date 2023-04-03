@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       height: {
         'mainheight' : '45rem',
-        'main' : 'calc(100% - 17rem)',
+        'main' : 'calc(100% - 15rem)',
         'pwidH' : '50rem'
       },
       width: {

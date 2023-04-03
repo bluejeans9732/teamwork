@@ -13,7 +13,7 @@ function Pwid() {
 
     return (
         <div className="h-main w-full relative overflow-y-scroll scrollbar-hide">
-            <div className="mx-auto mt-20 h-mainheight w-mainwd">
+            <div className="mx-auto mt-20 h-mainheight w-mainwd border-2 border-slate-300 rounded-2xl ">
                 <div className="flex flex-col mx-auto w-80">
                     <h1 className="mx-auto mt-10 text-4xl">회원가입</h1>
                     <p className="mt-10">이메일</p>
