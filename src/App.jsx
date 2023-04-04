@@ -1,19 +1,20 @@
 import Main from './component/Main';
 import Login from './component/Login';
 import Pwid from './component/Pwid';
+import Product from './component/product';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from './component/MainLayout';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className='h-screen min-h-full'>
+      <div className='h-screen min-h-full relative'>
         
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/*" element={<Main/>} />
+            <Route path="/product" element={<Product/>} />
           </Route>
-          
           <Route path="/login" element={<Login/>} />
           <Route path="/pwid" element={<Pwid/>} />
         </Routes>

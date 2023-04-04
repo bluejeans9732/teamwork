@@ -1,0 +1,29 @@
+/* .react-datepicker__triangle {
+  transform: translate(130px, 0px) !important;
+} */
+.example-custom-input {
+  background-color: #282c34;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+}
+
+.react-datepicker__input-container  {
+  background-color: #282c34;
+  color: black;
+  cursor: pointer;
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  background-color: #282c34;
+  color: white;
+  width: 100%;
+  padding: 10px;
+
+}
+
+.react-datepicker__input-container input div {
+  /* transform: translateX(50%); */
+}

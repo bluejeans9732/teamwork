@@ -8,7 +8,7 @@ function Login() {
             <div className="flex w-3/6"><img src="./image/carfix.jpg"/></div>
             <div className=" pt-20 pl-20 mx-auto w-3/6 bg-gray-50">
                 <Link to="/" className="mx-auto"><h1 className="text-5xl">Oh! MyCar</h1></Link>
-                <div className="flex flex-col mt-40 mx-auto w-1/2">
+                <div className="flex flex-col mt-20 mx-auto w-1/2">
                     <h1 className="text-4xl">로그인</h1>
                     <p className="mt-3 text-xs font-light">회원정보를 입력해주세요.</p>
                     <p className="mt-10">이메일 주소</p>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <div className="bg-zinc-400 text-white h-20 flex justify-between relative">
+        <div className="bg-zinc-400 text-white h-14 flex justify-between relative">
             <Link to="/">
                 <div className="text-3xl ml-4 mt-4">Oh! MyCar</div>
             </Link>
