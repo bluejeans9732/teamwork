@@ -1,6 +1,8 @@
 import React from "react";
 import BannerCarousel from './BannerCarousel';
 import PickDatePicker from  './PickDatePicker';
+import ProductReview from  './ProductReview';
+import DropDown from  './DropDown';
 
 
 function Product() {
@@ -47,20 +49,26 @@ function Product() {
                 </div>
                 <div className="mt-6 ml-4">
                     <h1 className="font-bold">매장 정보</h1>
-                    <div className="mt-1">오픈시간 : 9 ~ 18시</div>
-                    <div className="mt-1">예약은 한시간 단위로 열립니다.</div>
+                    <div className="mt-4 ml-2">
+                        <div className="mt-1">오픈시간 : 9 ~ 18시</div>
+                        <div className="mt-1">예약은 한시간 단위로 열립니다.</div>
+                    </div>
+                    
                 </div>
 
                 <p className="border-t border-slate-200 mt-6 w-line mx-auto"></p>
+                
+                <h1 className="font-bold mt-6 ml-4">베스트 리뷰</h1>
+                <div className="mt-4 ml-4 mr-4 h-72"><ProductReview /></div>
 
-                <div className="bg-red-300 mt-8 ml-4 mr-4 h-48">리뷰</div>
+                <p className="border-t border-slate-400 mt-10 w-line mx-auto"></p>
 
-                <div className="w-line mx-auto bg-gray-300 h-full mt-10">
-                    <p className="text-xs mt-2 font-light">예약 날짜</p>
-                    <div className="mt-1 w-1/3"><PickDatePicker/></div>
-                    <p className="text-xs mt-4 font-light">예약 물품</p>
-                    <div className="mt-1">물품 목록</div>
-                    
+                <h1 className="font-bold mt-6 ml-4">예약 선택</h1>
+                <div className="w-line mx-auto h-full mt-4 ml-4">
+                    <p className="text-xs mt-2 font-semibold">예약 날짜</p>
+                    <div className="mt-1 w-[240px]"><PickDatePicker/></div>
+                    <p className="text-xs mt-4 font-semibold">예약 물품</p>
+                    <div className="mt-1 w-[240px]"><DropDown/></div>            
                 </div>
                 <button className="bg-blue-300 w-full mt-10 p-2 text-white rounded-sm">예약하기</button>
                 

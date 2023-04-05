@@ -40,6 +40,7 @@ function PickDatePicker () {
             customInput={<ExampleCustomInput />}
             minDate={new Date()}
             filterTime={filterPassedTime}
+            filterDate={date=>date.getDay() != 6 && date.getDay() != 0 }
             
         />
     ) 

@@ -24,6 +24,7 @@
 
 }
 
-.react-datepicker__input-container input div {
-  /* transform: translateX(50%); */
+.react-datepicker__day--outside-month {
+  color: transparent !important;
+  pointer-events: none;
 }
