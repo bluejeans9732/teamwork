@@ -28,3 +28,8 @@
   color: transparent !important;
   pointer-events: none;
 }
+
+.react-datepicker__time-list-item--disabled {
+  color: transparent !important;
+  pointer-events: none;
+}

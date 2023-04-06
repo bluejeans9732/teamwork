@@ -36,7 +36,7 @@ function PickDatePicker () {
             timeIntervals={60}
             timeCaption="time"
             minTime={setHours(setMinutes(new Date(), 0), 9)}
-            maxTime={setHours(setMinutes(new Date(), 0), 18)}
+            maxTime={setHours(setMinutes(new Date(), 0), 17)}
             customInput={<ExampleCustomInput />}
             minDate={new Date()}
             filterTime={filterPassedTime}

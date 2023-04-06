@@ -28,7 +28,7 @@ function Login() {
                     {/* <Link to='/pwid' className="rounded-md  mt-5 w-80 h-12 bg-cyan-300 text-white text-center">
                         <button className="translate-y-2.5">회원가입</button>
                     </Link> */}
-                    <button className="rounded-md  mt-4 w-full h-12 bg-gray-400 text-white">Google로 로그인</button>
+                    <button className="rounded-md  mt-4 w-full h-12 bg-yellow-400 text-white">Kakao로 로그인</button>
                     {/* <button className="rounded-md mx-auto mt-5 w-80 h-12 bg-green-500 text-white">Naver 로그인</button>
                     <button className="rounded-md mx-auto mt-5 w-80 h-12 text-white bg-amber-300">Kakao 로그인</button> */}
                     <div className="mx-auto mt-20">아직 계정이 없다면?<Link to="/pwid" className="ml-3 underline underline-offset-2 font-bold">회원가입</Link></div>

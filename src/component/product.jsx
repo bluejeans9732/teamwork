@@ -1,11 +1,59 @@
-import React from "react";
+import React, { useState } from 'react';
 import BannerCarousel from './BannerCarousel';
 import PickDatePicker from  './PickDatePicker';
 import ProductReview from  './ProductReview';
-import DropDown from  './DropDown';
+import DropDown2 from './DropDown2';
+import SelectedItems from './SelectedItems';
 
 
 function Product() {
+
+    const [selectedItems, setSelectedItems] = useState([]);
+
+    const items = [
+        { id: 1, label: '엔진 오일' },
+        { id: 2, label: '브레이크 필터' },
+        { id: 3, label: '연료 필터' },
+        { id: 4, label: '브레이크 오일' },
+        { id: 5, label: '부동액' },
+        { id: 6, label: '배터리' },
+        { id: 7, label: '벨트' },
+        { id: 8, label: '타이어' },
+    ];
+
+    const handleDropdownChange = (item) => {
+        const index = selectedItems.findIndex((selectedItem) => selectedItem.id === item.id);
+        if (index > -1) {
+            const updatedItems = [...selectedItems];
+            updatedItems[index].quantity++;
+            setSelectedItems(updatedItems);
+        } else {
+            setSelectedItems([...selectedItems, { ...item, quantity: 1 }]);
+        }
+    };
+
+    const handleRemoveItemClick = (item) => {
+        const updatedItems = selectedItems.filter((selectedItem) => selectedItem.id !== item.id);
+        setSelectedItems(updatedItems);
+    };
+
+    const handleItemIncrement = (item) => {
+        const index = selectedItems.findIndex((selectedItem) => selectedItem.id === item.id);
+        const updatedItems = [...selectedItems];
+        updatedItems[index].quantity++;
+        setSelectedItems(updatedItems);
+    };
+
+    const handleItemDecrement = (item) => {
+        const index = selectedItems.findIndex((selectedItem) => selectedItem.id === item.id);
+        const updatedItems = [...selectedItems];
+        updatedItems[index].quantity--;
+        if (updatedItems[index].quantity === 0) {
+            updatedItems.splice(index, 1);
+        }
+        setSelectedItems(updatedItems);
+    };
+
     return (
       <div className="h-screen overflow-y-scroll scrollbar-hide relative bg-gray-100">
         <div className="flex flex-col mx-auto bg-white w-2/5 ">
@@ -68,7 +116,28 @@ function Product() {
                     <p className="text-xs mt-2 font-semibold">예약 날짜</p>
                     <div className="mt-1 w-[240px]"><PickDatePicker/></div>
                     <p className="text-xs mt-4 font-semibold">예약 물품</p>
-                    <div className="mt-1 w-[240px]"><DropDown/></div>            
+                    <div className="mt-1 ">
+                        <div>
+                            <DropDown2
+                                title="선택하세요"
+                                items={items}
+                                onDropdownChange={handleDropdownChange}
+                                
+                            />
+                            <p className="text-xs mt-4 font-bold">선택하신 목록</p>
+
+                            <ul ul className='mt-2 w-[280px]'>
+                                {selectedItems.map((item) => (
+                                <li key={item.id} className='flex flex-row'>
+                                    {item.label} <p className='ml-5'>수량 : {item.quantity}</p> 
+                                    <button  className='ml-3' onClick={() => handleItemIncrement(item)}>+</button>
+                                    <button  className='ml-3' onClick={() => handleItemDecrement(item)}>-</button>
+                                    <button  className='ml-3' onClick={() => handleRemoveItemClick(item)}>삭제</button>
+                                </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>          
                 </div>
                 <button className="bg-blue-300 w-full mt-10 p-2 text-white rounded-sm">예약하기</button>
                 

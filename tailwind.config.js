@@ -12,6 +12,9 @@ module.exports = {
         'mainwd' : '38rem',
         'pwidW' : '45rem',
         'line' : 'calc(100% - 2rem)',
+      },
+      colors: {
+        'kakao' : '#FEE500'
       }
     },
   },
