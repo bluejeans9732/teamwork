@@ -6,6 +6,8 @@ import './practice.css';
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 
+// product에 들어가는 달력 날짜 함수입니다 + 시간 합쳤습니다.
+
 function PickDatePicker () {
     const [startDate, setStartDate] = useState(
         setHours(setMinutes(new Date(), 0), 9)

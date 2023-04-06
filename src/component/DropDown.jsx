@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import list from '../list.json'
 
+// dropdown  첫작품인데 일단 냅둔 상태입니다.
+
 function DropDown() {
     const [isOpen, setIsOpen] =useState(false)
 

@@ -1,6 +1,10 @@
 /* .react-datepicker__triangle {
   transform: translate(130px, 0px) !important;
 } */
+
+/* datepicker부분에 사용되는 css입니다 tailwind로는 힘든거같아서 따로했습니다. */
+
+
 .example-custom-input {
   background-color: #282c34;
   color: white;

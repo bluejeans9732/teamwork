@@ -1,6 +1,9 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
+
+// product위에 사진 carousel 함수입니다.
+
 function BannerCarousel() {
     return (
         <Carousel

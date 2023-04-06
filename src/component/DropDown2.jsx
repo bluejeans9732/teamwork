@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+// product아래에 예약 물품 dropdown 함수입니다
+
 function DropDown2({ title, items, onDropdownChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
