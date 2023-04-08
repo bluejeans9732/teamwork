@@ -6,6 +6,7 @@ function Pwid() {
     const emailRegex =
       /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     const passwordRegex = /(?=.*\d)(?=.*[a-z]).{8,}/; // 영어 소문자, 숫자 포함 8자 이상 비밀번호
+    const nickRegex = /^[ㄱ-ㅎ|가-힣]+$/; //한글만
     
     const userRef = useRef();
     const errRef = useRef();
@@ -22,6 +23,10 @@ function Pwid() {
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
+    const [nickname, setNickname] = useState('');
+    const [validnick, setValidnick] = useState(false);
+    const [nickFocus, setNickFocus] = useState(false);
+    
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
@@ -46,12 +51,19 @@ function Pwid() {
     }, [pwd, matchPwd])
 
     useEffect(() => {
+        const result = nickRegex.test(nickname);
+        console.log(result);
+        console.log(nickname);
+        setValidnick(result);
+    }, [nickname])
+
+    useEffect(() => {
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(user, pwd);
+        console.log(user, pwd, nickname);
     }
 
     return (
@@ -128,23 +140,37 @@ function Pwid() {
                             </p>
                         </div>
 
-                        <p className="mt-4">닉네임</p>
-                        <div className="flex mt-1 w-full h-12 flex justify-between">
-                            <input type="text"
-                                placeholder="ex) 홍길동"
-                                className="rounded-md border-2 border-slate-300 h-10 w-4/6 outline-none focus:bg-cyan-50 p-3 focus:border-blue-500"
-                            />
-                            <button className="rounded-md  w-36 h-10 text-white bg-sky-800">중복확인</button>
+                        <div className="mt-4">
+                            <label htmlFor="nickname">닉네임</label>
+                            <div className="flex mt-1 w-full h-12 flex justify-between">
+                                <input 
+                                    type="text"
+                                    id="nickname"
+                                    required
+                                    onChange={(e) => setNickname(e.target.value)}
+                                    aria-invalid={validnick ? "false" : "true"}
+                                    aria-describedby="arianick"
+                                    onFocus={() => setNickFocus(true)}
+                                    onBlur={() => setNickFocus(false)}
+                                    placeholder="ex) 홍길동"
+                                    className="rounded-md border-2 border-slate-300 h-10 w-4/6 outline-none focus:bg-cyan-50 p-3 focus:border-blue-500"
+                                />
+                                <button className="rounded-md  w-36 h-10 text-white bg-sky-800">중복확인</button>
+                            </div>
+                            <p id="arianick" className={nickFocus && !validnick ? "block text-xs text-red-600" : "hidden"}>
+                                닉네임은 한글만 적어주세요.
+                            </p>
                         </div>
+                        
 
                         <button 
-                            className={!validName || !validPwd || !validMatch ? "rounded-md mt-10 h-12 text-white bg-gray-400" : "rounded-md mt-10 h-12 text-white bg-blue-400"}
-                            disabled={!validName || !validPwd || !validMatch ? true : false}
+                            className={!validName || !validPwd || !validMatch || !validnick ? "rounded-md mt-10 h-12 text-white bg-gray-400" : "rounded-md mt-10 h-12 text-white bg-blue-400"}
+                            disabled={!validName || !validPwd || !validMatch || !validnick ? true : false}
                             onSubmit={handleSubmit}
                         > 
                             회원가입 하기
                         </button>
-                        
+
                         <div className="mx-auto mt-20 "><Link to="/login" className="ml-3 underline underline-offset-2 font-bold">로그인 페이지로 돌아가기</Link></div>
                         
                     </div>

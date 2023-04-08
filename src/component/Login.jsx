@@ -33,7 +33,7 @@ function Login() {
                 <Link to="/" className="mx-auto"><h1 className="text-5xl">Oh! MyCar</h1></Link>
 
                 <section className="flex flex-col mt-20 mx-auto w-1/2">
-                    <form action="">
+                    <form>
 
                         <h1 className="text-4xl">로그인</h1>
                         <p className="mt-3 text-xs font-light">회원정보를 입력해주세요.</p>
@@ -70,7 +70,7 @@ function Login() {
                             <p className="mt-1 text-xs float-right font-light">비밀번호를 잊어버렸나요?</p>
                         </div>
                         <button className="Login_login rounded-md  mt-10 w-full h-12 bg-cyan-300 text-white text-bold" onSubmit={handleSubmit}>로그인</button>
-                        
+
                     </form>
                     
                     <button className="rounded-md  mt-4 w-full h-12 bg-yellow-400 text-white">Kakao로 로그인</button>
