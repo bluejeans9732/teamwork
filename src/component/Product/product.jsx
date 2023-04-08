@@ -3,7 +3,7 @@ import BannerCarousel from './BannerCarousel';
 import PickDatePicker from  './PickDatePicker';
 import ProductReview from  './ProductReview';
 import DropDown2 from './DropDown2';
-import SelectedItems from './SelectedItems';
+import SelectedItems from '../SelectedItems';
 
 
 function Product() {
@@ -126,7 +126,7 @@ function Product() {
                             />
                             <p className="text-xs mt-4 font-bold">선택하신 목록</p>
 
-                            <ul ul className='mt-2 w-[280px]'>
+                            <ul className='mt-2 w-[280px]'>
                                 {selectedItems.map((item) => (
                                 <li key={item.id} className='flex flex-row'>
                                     {item.label} <p className='ml-5'>수량 : {item.quantity}</p> 
