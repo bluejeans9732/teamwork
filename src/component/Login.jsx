@@ -1,6 +1,7 @@
 import { handler } from "daisyui";
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 function Login() {
@@ -21,6 +22,15 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const response = await axios.post('/api/login', {
+                user,
+                pwd
+            });
+            console.log(response.data);
+        } catch (error) {
+            console.log(error)
+        }
         setUser('');
         setPwd('');
     }

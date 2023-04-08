@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Pwid() {
     
@@ -64,6 +65,16 @@ function Pwid() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(user, pwd, nickname);
+        try {
+            const response = await axios.post('/api/signup', {
+                user,
+                pwd,
+                nickname
+            });
+            console.log(response.data);
+          } catch (error) {
+            console.log(error);
+          }
     }
 
     return (
@@ -87,6 +98,7 @@ function Pwid() {
                                 ref={userRef}
                                 autoComplete="off"
                                 required
+                                value={user}
                                 onChange={(e)=> setUser(e.target.value)}
                                 aria-invalid={validName ? "false" : "true"}
                                 aria-describedby="uidnote"
@@ -105,6 +117,7 @@ function Pwid() {
                             <input 
                                 type="password"
                                 id="password"
+                                value={pwd}
                                 onChange={(e) => setPwd(e.target.value)}
                                 required
                                 aria-invalid={validPwd ? "false" : "true"}
@@ -147,6 +160,7 @@ function Pwid() {
                                     type="text"
                                     id="nickname"
                                     required
+                                    value={nickname}
                                     onChange={(e) => setNickname(e.target.value)}
                                     aria-invalid={validnick ? "false" : "true"}
                                     aria-describedby="arianick"
