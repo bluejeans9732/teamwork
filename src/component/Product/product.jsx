@@ -3,22 +3,23 @@ import BannerCarousel from './BannerCarousel';
 import PickDatePicker from  './PickDatePicker';
 import ProductReview from  './ProductReview';
 import DropDown2 from './DropDown2';
-import SelectedItems from '../SelectedItems';
+import Modal from './Modal';
+
 
 
 function Product() {
-
     const [selectedItems, setSelectedItems] = useState([]);
-
+    const [open, setOpen] = useState(false);
+ 
     const items = [
-        { id: 1, label: '엔진 오일' },
-        { id: 2, label: '브레이크 필터' },
-        { id: 3, label: '연료 필터' },
-        { id: 4, label: '브레이크 오일' },
-        { id: 5, label: '부동액' },
-        { id: 6, label: '배터리' },
-        { id: 7, label: '벨트' },
-        { id: 8, label: '타이어' },
+        { id: 1, label: '엔진 오일', price: 50000 },
+        { id: 2, label: '브레이크 필터', price: 94000 },
+        { id: 3, label: '연료 필터', price: 100100 },
+        { id: 4, label: '브레이크 오일', price: 58700 },
+        { id: 5, label: '부동액', price: 54500 },
+        { id: 6, label: '배터리', price: 264900 },
+        { id: 7, label: '벨트', price: 52600 },
+        { id: 8, label: '타이어', price: 50000 },
     ];
 
     const handleDropdownChange = (item) => {
@@ -54,6 +55,8 @@ function Product() {
         setSelectedItems(updatedItems);
     };
 
+    localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+    
     return (
       <div className="h-screen overflow-y-scroll scrollbar-hide relative bg-gray-100">
         <div className="flex flex-col mx-auto bg-white w-2/5 ">
@@ -68,7 +71,7 @@ function Product() {
                 <div className="mt-10 mx-auto w-3/5 h-full">
                     <div className="flex flex-col  ">
                         <div className="w-40 h-32 mx-auto">
-                            <img src="./image/carcenterOner.jpg" className="rounded-full " />
+                            <img src="../../image/carcenterOner.jpg" className="rounded-full " />
                         </div>
                         <div className="w-full h-full ml-1 font-bold">
                             <p>초보 운전자들을 위한 카센터</p>
@@ -106,8 +109,15 @@ function Product() {
 
                 <p className="border-t border-slate-200 mt-6 w-line mx-auto"></p>
                 
-                <h1 className="font-bold mt-6 ml-4">베스트 리뷰</h1>
-                <div className="mt-4 ml-4 mr-4 h-72"><ProductReview /></div>
+                <div className='flex justify-between'>
+                    <h1 className="font-bold mt-6 ml-4">베스트 리뷰</h1>
+                    <h1 className="font-bold mt-6 mr-8">전체보기</h1>
+                </div>
+                
+                <div className="mt-4 ml-4 mr-4 flex">
+                    <ProductReview />
+                    <ProductReview />
+                </div>
 
                 <p className="border-t border-slate-400 mt-10 w-line mx-auto"></p>
 
@@ -126,20 +136,31 @@ function Product() {
                             />
                             <p className="text-xs mt-4 font-bold">선택하신 목록</p>
 
-                            <ul className='mt-2 w-[280px]'>
+                            <ul className='mt-2 w-[400px]'>
                                 {selectedItems.map((item) => (
-                                <li key={item.id} className='flex flex-row'>
-                                    {item.label} <p className='ml-5'>수량 : {item.quantity}</p> 
-                                    <button  className='ml-3' onClick={() => handleItemIncrement(item)}>+</button>
-                                    <button  className='ml-3' onClick={() => handleItemDecrement(item)}>-</button>
-                                    <button  className='ml-3' onClick={() => handleRemoveItemClick(item)}>삭제</button>
+                                <li key={item.id} className='flex flex-row mt-2'>
+                                    
+                                    <div className='flex justify-between'>
+                                        <div>{item.label}</div>
+                                        <div className='flex'>
+                                            <p className='ml-5'> 수량
+                                            <button  className='ml-3 mr-2 w-5 bg-red-400 text-white rounded' onClick={() => handleItemDecrement(item)}>-</button>
+                                            {item.quantity}</p> 
+                                            <button  className='ml-3 w-5 bg-blue-400 text-white rounded' onClick={() => handleItemIncrement(item)}>+</button>
+                                            <button  className='ml-3 w-20 bg-blue-400 text-white rounded' onClick={() => handleRemoveItemClick(item)}>삭제</button>
+                                        </div>
+                                    </div>
+                                   
                                 </li>
                                 ))}
                             </ul>
                         </div>
                     </div>          
                 </div>
-                <button className="bg-blue-300 w-full mt-10 p-2 text-white rounded-sm">예약하기</button>
+
+                <button className="bg-blue-300 w-full mt-10 p-2 text-white rounded-sm" onClick={() => setOpen(true)}>예약하기</button>
+                
+                <Modal open={open} onClose={() => setOpen(false)} />
                 
             </div>
         </div>

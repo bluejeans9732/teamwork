@@ -43,7 +43,7 @@ function Login() {
                 <Link to="/" className="mx-auto"><h1 className="text-5xl">Oh! MyCar</h1></Link>
 
                 <section className="flex flex-col mt-20 mx-auto w-1/2">
-                    <form>
+                    <form autocomplete="off">
 
                         <h1 className="text-4xl">로그인</h1>
                         <p className="mt-3 text-xs font-light">회원정보를 입력해주세요.</p>

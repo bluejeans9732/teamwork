@@ -12,6 +12,8 @@ function PickDatePicker () {
     const [startDate, setStartDate] = useState(
         setHours(setMinutes(new Date(), 0), 9)
     );
+    
+    localStorage.setItem("startDate", JSON.stringify(startDate));
 
     const filterPassedTime = (time) => {
         const currentDate = new Date();
@@ -26,7 +28,7 @@ function PickDatePicker () {
           {value}
         </button>
     ));
-
+    
     return (
         <DatePicker
             locale={ko}

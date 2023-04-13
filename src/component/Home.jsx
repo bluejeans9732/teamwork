@@ -7,7 +7,7 @@ const Home = () => {
     const navigate = useNavigate();
   
     return (
-      <div className="background bg-black">
+      <div className="background">
         <div className="container w-[90%] xl:max-w-5xl z-10 absolute inset-x-1/2 translate-x-[-50%]">
           <div className="flex flex-col justify-center items-center text-white mt-6 h-screen">
             <header className="font-bold text-2xl mb-5">🚘 Oh! My Car 🔧</header>

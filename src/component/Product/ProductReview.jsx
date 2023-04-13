@@ -2,16 +2,18 @@ import React from "react";
 
 function ProductReview() {
     return (
-        <div className="h-72 flex justify-around mt-10">
-            <div className="border-2 w-1/3 rounded-md">
-                <img src="./image/people2.jpg" className="w-1/2 h-32 rounded-full mx-auto mt-2" />
-                <p className="mt-2 ml-2 font-semibold">사장님이 친절해요</p>
-                <p className="mt-2 ml-2 text-xs font-light mr-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi magnam placeat veniam! Fugit consectetur quae libero, dolorem nobis ullam eos corporis blanditiis ea vitae nesciunt, voluptates harum rem labore non?</p>
-            </div>
-            <div className="border-2 w-1/3 rounded-md">
-                <img src="./image/people3.png" className="w-1/2 h-32 rounded-full mx-auto mt-2" />
-                <p className="mt-2 ml-2 font-semibold">가격이 싸요</p>
-                <p className="mt-2 ml-2 text-xs font-light mr-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, vero ipsum sint quaerat, quos cum quae consequuntur commodi doloremque aliquam provident ut ratione culpa corporis fugiat corrupti asperiores ab similique?</p>
+        <div class="p-4 w-6/12">
+            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="h-40 w-full object-cover object-center"
+                    src="https://picsum.photos/id/188/720/400" alt="blog"/>
+                <div class="p-6">
+                    
+                    <h1 class="text-2xl font-semibold mb-3">가성비가 좋았어요</h1>
+                    <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Aperiam modi, expedita quos doloremque autem ipsum itaque incidunt ipsam reprehenderit
+                        fuga! Dolores quisquam eius cum accusamus?</p>
+                    
+                </div>
             </div>
         </div>
     );

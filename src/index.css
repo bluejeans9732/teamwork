@@ -1,3 +1,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Font */
+
+  
+  /* Style */
+  * {
+    font-family: "Jal_Onuel";
+  }
+  
+  html,
+  body,
+  #root {
+    height: 100vh;
+  }
+  
+  #root {
+    overflow-y: auto;
+  }
+  
+  div {
+    box-sizing: border-box;
+    word-break: keep-all;
+  }
+  
+  
+  /* Login */
+  .background {
+    @apply fixed top-0 bottom-0 left-0 right-0 z-0 bg-base-100;
+  }
+  
+  /* Home */
+  .background {
+    @apply fixed top-0 bottom-0 left-0 right-0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  }
+  .fade-in-out {
+    @apply fixed top-0 bottom-0 left-0 right-0;
+  }
+  
+  .fade-in-out li {
+    @apply absolute w-full h-full bg-cover bg-center bg-no-repeat opacity-0 animate-[imageFadeInOut_50s_linear_infinite];
+  }
+  
+  
+  .fade-in-out li:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./images/1.png');
+  }
+  .fade-in-out li:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./images/2.png');
+    animation-delay: 10s;
+  }
+  .fade-in-out li:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./images/3.png');
+    animation-delay: 20s;
+  }
+  .fade-in-out li:nth-child(4) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./images/4.png');
+    animation-delay: 30s;
+  }
+  .fade-in-out li:nth-child(5) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./images/5.png');
+    animation-delay: 40s;
+  }
+  
+  @keyframes imageFadeInOut {
+    0% {
+      opacity: 0;
+      animation-timing-function: ease-in;
+    }
+    10% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    20% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0;
+    }
+  }
+  
+   /* Key */
+   @keyframes blink-effect {
+    80% {
+      opacity: 0;
+    }
+  }
+  
+  .blink {
+    animation: blink-effect 3s step-end infinite;
+  
+    /*
+    animation-name: blink-effect;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-timing-function:step-end;
+    */
+  }
+  
+  /* Places */
+  .places {
+    -ms-overflow-style: none;
+  }
+  
+  .places::-webkit-scrollbar {
+    display: none;
+  }
+  

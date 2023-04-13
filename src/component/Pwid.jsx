@@ -84,7 +84,7 @@ function Pwid() {
 
                 <Link to="/" className="mx-auto"><h1 className="text-5xl">Oh! MyCar</h1></Link>
 
-                <form>
+                <form autocomplete="off">
                     <div className="flex flex-col mt-20 mx-auto w-1/2">
 
                         <h1 className="text-4xl">회원가입</h1>

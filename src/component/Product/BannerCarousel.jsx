@@ -17,13 +17,13 @@ function BannerCarousel() {
             
         >
             <div>
-                <img src='./image/carcenter0.jpg' className='h-60 bg-cover'/>
+                <img src='../../image/carcenter0.jpg' className='h-60 bg-cover'/>
             </div>
             <div>
-                <img src='./image/carcenter1.jpg' className='h-60 bg-cover'/>
+                <img src='../../image/carcenter0.jpg' className='h-60 bg-cover'/>
             </div>
             <div>
-                <img src='./image/carcenter2.jpg' className='h-60 bg-cover'/>
+                <img src='../../image/carcenter0.jpg' className='h-60 bg-cover'/>
             </div>
             
         </Carousel>
