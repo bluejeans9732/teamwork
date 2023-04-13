@@ -11,7 +11,7 @@ function ListCard({challenge, index}) {
     };
 
     return (
-        <div className="bg-slate-100 shadow-lg p-5 rounded-md">
+        <div className="bg-gray-50 shadow-lg p-5 rounded-md">
             <h2 className="text-indigo-500">
                 <span className="text-indigo-300 mr-2">{challenge.name}</span>
             </h2>

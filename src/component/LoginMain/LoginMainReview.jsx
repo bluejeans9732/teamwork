@@ -7,7 +7,7 @@ function LoginMainReview() {
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img class="lg:h-60 md:h-48 w-full object-cover object-center"
                     src="https://picsum.photos/id/188/720/400" alt="blog"/>
-                <div class="p-6">
+                <div class="p-6 bg-white">
                     
                     <h1 class="text-2xl font-semibold mb-3">가성비가 좋았어요</h1>
                     <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
